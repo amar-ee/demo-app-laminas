@@ -12,5 +12,24 @@
  * credentials from accidentally being committed into version control.
  */
 
+declare(strict_types=1);
+
+use Doctrine\DBAL\Driver as PDOMySqlDriver;
+
 return [
+    'doctrine' => [
+        'connection' => [
+            'orm_default' => [
+                'driverClass' => \Doctrine\DBAL\Driver\PDOMySql\Driver::class,
+                'params' => [
+                    'host' => '<mysql_host>',
+                    'port' => '<mysql_port>', //default is "3306"
+                    'user' => '<mysql_user>',
+                    'password' => '<mysql_password>',
+                    'dbname' => '<mysql_dbname>',
+                    'charset' => 'utf8',
+                ],
+            ],
+        ],
+    ],
 ];
