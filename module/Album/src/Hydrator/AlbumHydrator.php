@@ -31,4 +31,3 @@ class AlbumHydrator extends ClassMethodsHydrator
         ];
     }
 }
-

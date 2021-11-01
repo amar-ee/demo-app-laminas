@@ -22,4 +22,3 @@ class AlbumRepository extends EntityRepository
         return $query;
     }
 }
-
