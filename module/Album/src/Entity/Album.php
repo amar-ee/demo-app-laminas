@@ -12,7 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Album
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(name="id", type="integer", nullable=false)

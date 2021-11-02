@@ -17,7 +17,7 @@ use Album\Service\AlbumService;
 class AlbumController extends AbstractActionController
 {
     /**
-     * @var AlbumRepository
+     * @var AlbumService
      */
     private $albumService;
 
@@ -67,10 +67,10 @@ class AlbumController extends AbstractActionController
         if (! $form->isValid()) {
             return ['form' => $form];
         }
-          $data = $form->getData();
-          $albumObj = new AlbumEntity();
-          $albumData = $this->albumHydrator->hydrate($data, $albumObj);
-          $this->albumService->saveAlbum($albumData);
+        $data = $form->getData();
+        $albumObj = new AlbumEntity();
+        $albumData = $this->albumHydrator->hydrate($data, $albumObj);
+        $this->albumService->saveAlbum($albumData);
 
         return $this->redirect()->toRoute('album');
     }
@@ -122,7 +122,6 @@ class AlbumController extends AbstractActionController
         // Redirect to album list
         return $this->redirect()->toRoute('album', ['action' => 'index']);
     }
-
 
     /**
      * @return array|Response
